@@ -9,7 +9,7 @@ At least one of the following parameters must be provided: Operation, CountryNam
 
     <a class="navbar-brand me-2" href="../index.html">dtmapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,28 +103,28 @@ At least one of the following parameters must be provided: Operation, CountryNam
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Fetch IDP data at Admin Level 1</span></span></span>
-<span class="r-in"><span><span class="va">idp_admin1_df</span> <span class="op">&lt;-</span> <span class="fu">get_idp_admin1_data</span><span class="op">(</span>CountryName<span class="op">=</span><span class="st">'Sudan'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">idp_admin1_df</span> <span class="op">&lt;-</span> <span class="fu">get_idp_admin1_data</span><span class="op">(</span>CountryName<span class="op">=</span><span class="st">'Sudan'</span>, Admin1Name<span class="op">=</span><span class="st">"Blue Nile"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">idp_admin1_df</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        id       operation admin0Name admin0Pcode     admin1Name admin1Pcode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1710479 Darfur conflict      Sudan         SDN    West Darfur        SD04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 1710480 Darfur conflict      Sudan         SDN    West Darfur        SD04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 1711848 Darfur conflict      Sudan         SDN Central Darfur        SD06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 1712244 Darfur conflict      Sudan         SDN   North Darfur        SD02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 1712245 Darfur conflict      Sudan         SDN   North Darfur        SD02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 1711849 Darfur conflict      Sudan         SDN Central Darfur        SD06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        id              operation admin0Name admin0Pcode admin1Name admin1Pcode</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2034955        Darfur conflict      Sudan         SDN  Blue Nile        SD08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2034956        Darfur conflict      Sudan         SDN  Blue Nile        SD08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2034957        Darfur conflict      Sudan         SDN  Blue Nile        SD08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2034958        Darfur conflict      Sudan         SDN  Blue Nile        SD08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2027912 Armed Clashes in Sudan      Sudan         SDN  Blue Nile        SD08</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2027913 Armed Clashes in Sudan      Sudan         SDN  Blue Nile        SD08</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   numPresentIdpInd       reportingDate yearReportingDate monthReportingDate</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1            10311 2010-06-30T00:00:00              2010                  6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2            10311 2011-02-28T00:00:00              2011                  2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3            17637 2011-02-28T00:00:00              2011                  2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4             4818 2011-02-28T00:00:00              2011                  2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5            30451 2011-03-30T00:00:00              2011                  3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6            17637 2011-03-30T00:00:00              2011                  3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1            81693 2021-03-30T00:00:00              2021                  3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           130958 2021-12-31T00:00:00              2021                 12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3           151156 2022-01-31T00:00:00              2022                  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4           152656 2022-03-30T00:00:00              2022                  3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5              260 2023-04-28T00:00:00              2023                  4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6              715 2023-05-07T00:00:00              2023                  5</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   roundNumber assessmentType</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1           1             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2           2             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           2             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4           2             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5           3             BA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1           2             BA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2           3             BA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3           4             BA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4           5             BA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5           2             BA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 6           3             BA</span>
 </code></pre></div>
     </div>

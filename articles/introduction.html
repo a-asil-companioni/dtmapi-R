@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">dtmapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -146,12 +146,12 @@ Displaced Persons (IDP) data aggregated at the country level.</p>
 <span><span class="co"># Display the first few rows of the data frame</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">idp_admin0_df</span><span class="op">)</span></span>
 <span><span class="co">#&gt;       id                operation admin0Name admin0Pcode numPresentIdpInd</span></span>
-<span><span class="co">#&gt; 1 209494   Countrywide monitoring   Ethiopia         ETH          1696145</span></span>
-<span><span class="co">#&gt; 2 209495   Countrywide monitoring   Ethiopia         ETH          1742461</span></span>
-<span><span class="co">#&gt; 3 209496   Countrywide monitoring   Ethiopia         ETH          1613436</span></span>
-<span><span class="co">#&gt; 4 209715 Northern Ethiopia Crisis   Ethiopia         ETH           131590</span></span>
-<span><span class="co">#&gt; 5 209716 Northern Ethiopia Crisis   Ethiopia         ETH           378392</span></span>
-<span><span class="co">#&gt; 6 209717 Northern Ethiopia Crisis   Ethiopia         ETH          1025676</span></span>
+<span><span class="co">#&gt; 1 247732   Countrywide monitoring   Ethiopia         ETH          1696145</span></span>
+<span><span class="co">#&gt; 2 247733   Countrywide monitoring   Ethiopia         ETH          1742461</span></span>
+<span><span class="co">#&gt; 3 247734   Countrywide monitoring   Ethiopia         ETH          1613436</span></span>
+<span><span class="co">#&gt; 4 248460 Northern Ethiopia Crisis   Ethiopia         ETH           131590</span></span>
+<span><span class="co">#&gt; 5 248461 Northern Ethiopia Crisis   Ethiopia         ETH           378392</span></span>
+<span><span class="co">#&gt; 6 248462 Northern Ethiopia Crisis   Ethiopia         ETH          1025676</span></span>
 <span><span class="co">#&gt;         reportingDate yearReportingDate monthReportingDate roundNumber</span></span>
 <span><span class="co">#&gt; 1 2017-12-31T00:00:00              2017                 12           8</span></span>
 <span><span class="co">#&gt; 2 2018-02-28T00:00:00              2018                  2           9</span></span>
@@ -174,31 +174,31 @@ Displaced Persons (IDP) data aggregated at the country level.</p>
 Admin Level 1.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Fetch IDP data at Admin Level 1</span></span>
-<span><span class="va">idp_admin1_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_idp_admin1_data.html">get_idp_admin1_data</a></span><span class="op">(</span>CountryName<span class="op">=</span><span class="st">'Sudan'</span>, FromReportingDate<span class="op">=</span><span class="st">'2020-01-01'</span>, ToReportingDate<span class="op">=</span><span class="st">'2024-08-15'</span><span class="op">)</span></span>
+<span><span class="va">idp_admin1_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_idp_admin1_data.html">get_idp_admin1_data</a></span><span class="op">(</span>CountryName<span class="op">=</span><span class="st">'Sudan'</span>, Admin1Name<span class="op">=</span><span class="st">"Blue Nile"</span>, FromReportingDate<span class="op">=</span><span class="st">'2020-01-01'</span>, ToReportingDate<span class="op">=</span><span class="st">'2024-08-15'</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Display the first few rows of the data frame</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">idp_admin1_df</span><span class="op">)</span></span>
-<span><span class="co">#&gt;        id       operation admin0Name admin0Pcode     admin1Name admin1Pcode</span></span>
-<span><span class="co">#&gt; 1 1709593 Darfur conflict      Sudan         SDN   North Darfur        SD02</span></span>
-<span><span class="co">#&gt; 2 1710019 Darfur conflict      Sudan         SDN   South Darfur        SD03</span></span>
-<span><span class="co">#&gt; 3 1712235 Darfur conflict      Sudan         SDN    East Darfur        SD05</span></span>
-<span><span class="co">#&gt; 4 1711984 Darfur conflict      Sudan         SDN Central Darfur        SD06</span></span>
-<span><span class="co">#&gt; 5 1710547 Darfur conflict      Sudan         SDN    West Darfur        SD04</span></span>
-<span><span class="co">#&gt; 6 1710053 Darfur conflict      Sudan         SDN South Kordofan        SD07</span></span>
+<span><span class="co">#&gt;        id              operation admin0Name admin0Pcode admin1Name admin1Pcode</span></span>
+<span><span class="co">#&gt; 1 2034955        Darfur conflict      Sudan         SDN  Blue Nile        SD08</span></span>
+<span><span class="co">#&gt; 2 2034956        Darfur conflict      Sudan         SDN  Blue Nile        SD08</span></span>
+<span><span class="co">#&gt; 3 2034957        Darfur conflict      Sudan         SDN  Blue Nile        SD08</span></span>
+<span><span class="co">#&gt; 4 2034958        Darfur conflict      Sudan         SDN  Blue Nile        SD08</span></span>
+<span><span class="co">#&gt; 5 2027912 Armed Clashes in Sudan      Sudan         SDN  Blue Nile        SD08</span></span>
+<span><span class="co">#&gt; 6 2027913 Armed Clashes in Sudan      Sudan         SDN  Blue Nile        SD08</span></span>
 <span><span class="co">#&gt;   numPresentIdpInd       reportingDate yearReportingDate monthReportingDate</span></span>
-<span><span class="co">#&gt; 1           503200 2020-01-30T00:00:00              2020                  1</span></span>
-<span><span class="co">#&gt; 2           793328 2020-01-30T00:00:00              2020                  1</span></span>
-<span><span class="co">#&gt; 3            99697 2020-01-30T00:00:00              2020                  1</span></span>
-<span><span class="co">#&gt; 4           377209 2020-01-30T00:00:00              2020                  1</span></span>
-<span><span class="co">#&gt; 5           335301 2020-01-30T00:00:00              2020                  1</span></span>
-<span><span class="co">#&gt; 6           217683 2020-01-30T00:00:00              2020                  1</span></span>
+<span><span class="co">#&gt; 1            81693 2021-03-30T00:00:00              2021                  3</span></span>
+<span><span class="co">#&gt; 2           130958 2021-12-31T00:00:00              2021                 12</span></span>
+<span><span class="co">#&gt; 3           151156 2022-01-31T00:00:00              2022                  1</span></span>
+<span><span class="co">#&gt; 4           152656 2022-03-30T00:00:00              2022                  3</span></span>
+<span><span class="co">#&gt; 5              260 2023-04-28T00:00:00              2023                  4</span></span>
+<span><span class="co">#&gt; 6              715 2023-05-07T00:00:00              2023                  5</span></span>
 <span><span class="co">#&gt;   roundNumber assessmentType</span></span>
-<span><span class="co">#&gt; 1           1             BA</span></span>
-<span><span class="co">#&gt; 2           1             BA</span></span>
-<span><span class="co">#&gt; 3           1             BA</span></span>
-<span><span class="co">#&gt; 4           1             BA</span></span>
-<span><span class="co">#&gt; 5           1             BA</span></span>
-<span><span class="co">#&gt; 6           1             BA</span></span></code></pre></div>
+<span><span class="co">#&gt; 1           2             BA</span></span>
+<span><span class="co">#&gt; 2           3             BA</span></span>
+<span><span class="co">#&gt; 3           4             BA</span></span>
+<span><span class="co">#&gt; 4           5             BA</span></span>
+<span><span class="co">#&gt; 5           2             BA</span></span>
+<span><span class="co">#&gt; 6           3             BA</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="get-idp-data-at-admin-level-2">Get IDP Data at Admin Level 2<a class="anchor" aria-label="anchor" href="#get-idp-data-at-admin-level-2"></a>
@@ -212,19 +212,19 @@ Admin Level 2</p>
 <span><span class="co"># Display the first few rows of the data frame</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">idp_admin2_df</span><span class="op">)</span></span>
 <span><span class="co">#&gt;         id                    operation admin0Name admin0Pcode    admin1Name</span></span>
-<span><span class="co">#&gt; 1 11556526 Displacement due to conflict    Lebanon         LBN Mount Lebanon</span></span>
-<span><span class="co">#&gt; 2 11556527 Displacement due to conflict    Lebanon         LBN Mount Lebanon</span></span>
-<span><span class="co">#&gt; 3 11556448 Displacement due to conflict    Lebanon         LBN Mount Lebanon</span></span>
-<span><span class="co">#&gt; 4 11556449 Displacement due to conflict    Lebanon         LBN Mount Lebanon</span></span>
-<span><span class="co">#&gt; 5 11556604 Displacement due to conflict    Lebanon         LBN Mount Lebanon</span></span>
-<span><span class="co">#&gt; 6 11556605 Displacement due to conflict    Lebanon         LBN Mount Lebanon</span></span>
+<span><span class="co">#&gt; 1 13537606 Displacement due to conflict    Lebanon         LBN Mount Lebanon</span></span>
+<span><span class="co">#&gt; 2 13537607 Displacement due to conflict    Lebanon         LBN Mount Lebanon</span></span>
+<span><span class="co">#&gt; 3 13560032 Displacement due to conflict    Lebanon         LBN         South</span></span>
+<span><span class="co">#&gt; 4 13560033 Displacement due to conflict    Lebanon         LBN         South</span></span>
+<span><span class="co">#&gt; 5 13560112 Displacement due to conflict    Lebanon         LBN         South</span></span>
+<span><span class="co">#&gt; 6 13560113 Displacement due to conflict    Lebanon         LBN         South</span></span>
 <span><span class="co">#&gt;   admin1Pcode admin2Name admin2Pcode numPresentIdpInd       reportingDate</span></span>
-<span><span class="co">#&gt; 1         LB3      Jbeil        LB34               15 2023-10-15T00:00:00</span></span>
-<span><span class="co">#&gt; 2         LB3      Jbeil        LB34               86 2023-10-15T00:00:00</span></span>
-<span><span class="co">#&gt; 3         LB3   El Meten        LB36               75 2023-10-15T00:00:00</span></span>
-<span><span class="co">#&gt; 4         LB3   El Meten        LB36              125 2023-10-15T00:00:00</span></span>
-<span><span class="co">#&gt; 5         LB3   Kesrwane        LB35               35 2023-10-15T00:00:00</span></span>
-<span><span class="co">#&gt; 6         LB3   Kesrwane        LB35               35 2023-10-15T00:00:00</span></span>
+<span><span class="co">#&gt; 1         LB3   El Meten        LB36               75 2023-10-15T00:00:00</span></span>
+<span><span class="co">#&gt; 2         LB3   El Meten        LB36              125 2023-10-15T00:00:00</span></span>
+<span><span class="co">#&gt; 3         LB6      Saida        LB61              670 2023-10-15T00:00:00</span></span>
+<span><span class="co">#&gt; 4         LB6      Saida        LB61              684 2023-10-15T00:00:00</span></span>
+<span><span class="co">#&gt; 5         LB6       Sour        LB63              395 2023-10-15T00:00:00</span></span>
+<span><span class="co">#&gt; 6         LB6       Sour        LB63              397 2023-10-15T00:00:00</span></span>
 <span><span class="co">#&gt;   yearReportingDate monthReportingDate roundNumber assessmentType</span></span>
 <span><span class="co">#&gt; 1              2023                 10           1             BA</span></span>
 <span><span class="co">#&gt; 2              2023                 10           2             BA</span></span>
