@@ -12,7 +12,7 @@
 Please find more information about [DTM API](https://dtm.iom.int/data-and-analysis/dtm-api) here.
 
 ## Installation
-The `dtmapi` package is available on CRAN and can be installed using the following command:
+The `dtmapi` package is available on [CRAN](https://CRAN.R-project.org/package=dtmapi) and can be installed using the following command:
 
 ```sh
 install.packages("dtmapi")
@@ -56,4 +56,4 @@ The source code for `dtmapi` is available on [GitHub](https://github.com/Displac
 Feel free to explore the repository, contribute, or raise any issues you may encounter.
 
 ## Contact
-For any questions or feedback, please reach out to us at [dtmsupport@iom.int](mailto:dtmsupport@iom.int).
+For any questions or feedback, please reach out to us at [dtmdataconsolidation@iom.int](mailto:dtmdataconsolidation@iom.int).

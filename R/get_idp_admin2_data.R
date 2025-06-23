@@ -21,9 +21,11 @@ library(magrittr)  # For the `%>%` operator
 #' @return A data frame containing the IDP Admin2 data matching the specified criteria.
 #' @export
 #' @examples
+#' \dontrun{
 #' # Fetch IDP data at Admin Level 2
 #' idp_admin2_df <- get_idp_admin2_data(Operation='Yemen conflict', CountryName="Yemen")
 #' head(idp_admin2_df)
+#' }
 #' @importFrom httr2 request req_perform req_url_query resp_status resp_body_string
 #' @importFrom magrittr %>%
 #' @importFrom jsonlite fromJSON
