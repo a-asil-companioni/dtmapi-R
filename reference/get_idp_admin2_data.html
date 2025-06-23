@@ -9,7 +9,7 @@ At least one of the following parameters must be provided: Operation, CountryNam
 
     <a class="navbar-brand me-2" href="../index.html">dtmapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,30 +112,11 @@ At least one of the following parameters must be provided: Operation, CountryNam
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Fetch IDP data at Admin Level 2</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span><span class="co"># Fetch IDP data at Admin Level 2</span></span></span>
 <span class="r-in"><span><span class="va">idp_admin2_df</span> <span class="op">&lt;-</span> <span class="fu">get_idp_admin2_data</span><span class="op">(</span>Operation<span class="op">=</span><span class="st">'Yemen conflict'</span>, CountryName<span class="op">=</span><span class="st">"Yemen"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">idp_admin2_df</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         id      operation admin0Name admin0Pcode  admin1Name admin1Pcode</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 13504702 Yemen conflict      Yemen         YEM         Ibb        YE11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 13504716 Yemen conflict      Yemen         YEM         Ibb        YE11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 13505262 Yemen conflict      Yemen         YEM    Al Bayda        YE14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 13505833 Yemen conflict      Yemen         YEM         Ibb        YE11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 13513056 Yemen conflict      Yemen         YEM Al Hudaydah        YE18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 13543230 Yemen conflict      Yemen         YEM      Dhamar        YE20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      admin2Name admin2Pcode numPresentIdpInd       reportingDate</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Hazm Al Udayn      YE1109             1250 2015-07-30T00:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       Hubaysh      YE1108             2584 2015-07-30T00:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         Rada'      YE1413             1820 2015-07-30T00:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     Ar Radmah      YE1103              250 2015-07-30T00:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5    Al Mighlaf      YE1808              511 2015-07-30T00:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6        Jahran      YE2002              910 2015-07-30T00:00:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   yearReportingDate monthReportingDate roundNumber assessmentType</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1              2015                  7           3             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2              2015                  7           3             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3              2015                  7           3             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4              2015                  7           3             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5              2015                  7           3             BA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6              2015                  7           3             BA</span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
@@ -147,7 +128,7 @@ At least one of the following parameters must be provided: Operation, CountryNam
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer></div>
