@@ -1,5 +1,4 @@
 library(httr2)
-library(jsonlite)
 
 #' Fetch All Operations
 #'
@@ -11,8 +10,8 @@ library(jsonlite)
 #' # Fetch all operations
 #' operations_df <- get_all_operations()
 #' head(operations_df)
-#' @importFrom httr2 request req_perform resp_status resp_body_string
-#' @importFrom jsonlite fromJSON
+#' @importFrom httr2 request req_perform resp_status resp_body_json
+
 get_all_operations <- function() {
 
   tryCatch({
@@ -28,8 +27,8 @@ get_all_operations <- function() {
     }
 
     # Parse the JSON content and extract the result as a data frame
-    data <- resp_body_string(response)
-    df <- fromJSON(data, flatten = TRUE)$result
+    json_data <- resp_body_json(response, simplifyVector = TRUE)
+    df <- as.data.frame(json_data$result) # as.data.frame() for consistency's sake.
 
     # Return the data frame
     return(df)

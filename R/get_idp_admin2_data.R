@@ -1,5 +1,4 @@
 library(httr2)
-library(jsonlite)
 
 #' Fetch IDP Admin2 Data
 #'
@@ -26,7 +25,7 @@ library(jsonlite)
 #' head(idp_admin2_df)
 #' }
 #' @importFrom httr2 request req_perform req_url_query resp_status resp_body_string
-#' @importFrom jsonlite fromJSON
+
 get_idp_admin2_data <- function(
     Operation = NULL,
     CountryName = NULL,
@@ -69,9 +68,8 @@ get_idp_admin2_data <- function(
       stop("Failed to fetch data. Status code: ", resp_status(response))
     }
 
-    # Parse the JSON content
-    data <- resp_body_string(response, encoding = "UTF-8")
-    json_data <- fromJSON(data, flatten = TRUE)
+    # Retrieve content as parsed JSON: simplifyVector helps to later return a dataframe.
+    json_data <- resp_body_json(response, simplifyVector = TRUE)
 
     # Check if the request was successful and extract the result
     if (json_data$isSuccess) {
