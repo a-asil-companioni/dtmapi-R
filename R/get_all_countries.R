@@ -1,6 +1,5 @@
 library(httr2)
 library(jsonlite)
-library(magrittr)  # For the `%>%` operator
 
 #' Fetch All Countries
 #'
@@ -13,7 +12,6 @@ library(magrittr)  # For the `%>%` operator
 #' countries_df <- get_all_countries()
 #' head(countries_df)
 #' @importFrom httr2 request req_perform resp_status resp_body_string
-#' @importFrom magrittr %>%
 #' @importFrom jsonlite fromJSON
 get_all_countries <- function() {
 
@@ -22,7 +20,7 @@ get_all_countries <- function() {
     api_url <- "https://dtmapi.iom.int/api/Common/GetAllCountryList"
 
     # Send GET request to the API using httr2
-    response <- request(api_url) %>% req_perform()
+    response <- request(api_url) |> req_perform()
 
     # Check if the request was successful
     if (resp_status(response) != 200) {

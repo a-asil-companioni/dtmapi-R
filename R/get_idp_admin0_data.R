@@ -1,6 +1,5 @@
 library(httr2)
 library(jsonlite)
-library(magrittr)  # For the `%>%` operator
 
 #' Fetch IDP Admin0 Data
 #'
@@ -21,7 +20,6 @@ library(magrittr)  # For the `%>%` operator
 #' idp_admin0_df <- get_idp_admin0_data(CountryName='Ethiopia', FromRoundNumber=1, ToRoundNumber=10)
 #' head(idp_admin0_df)
 #' @importFrom httr2 request req_perform req_url_query resp_status resp_body_string
-#' @importFrom magrittr %>%
 #' @importFrom jsonlite fromJSON
 get_idp_admin0_data <- function(
     Operation = NULL,
@@ -48,8 +46,8 @@ get_idp_admin0_data <- function(
 
   tryCatch({
     # Send GET request to the API with parameters using httr2
-    response <- request(api_url) %>%
-      req_url_query(!!!params) %>%
+    response <- request(api_url) |>
+      req_url_query(!!!params) |>
       req_perform()
 
     # Check if the request was successful
