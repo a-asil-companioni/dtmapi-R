@@ -13,11 +13,15 @@
 get_all_operations <- function() {
 
   tryCatch({
-    # Load configuration
-    api_url <- "https://dtmapi.iom.int/api/Common/GetAllOperationList"
+    api_url <- "https://dtm-apim.iom.int/v3/OperationList"
 
-    # Send GET request to the API using httr2
-    response <- request(api_url) |> req_perform()
+
+    response <- 
+      request(api_url) |>
+      req_headers_redacted("Cache-Control" = "no-cache",
+                           "Ocp-Apim-Subscription-Key" = get_subscription_key()
+                          ) |>
+      req_perform()
 
     # Check if the request was successful
     if (resp_status(response) != 200) {

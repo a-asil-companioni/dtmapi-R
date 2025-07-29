@@ -51,7 +51,7 @@ At least one of the following parameters must be provided: Operation, CountryNam
 \examples{
 \dontrun{
 # Fetch IDP data at Admin Level 2
-idp_admin2_df <- get_idp_admin2_data(Operation='Yemen conflict', CountryName="Yemen")
+idp_admin2_df <- get_idp_admin2_data(Operation = "Yemen conflict", CountryName = "Yemen")
 head(idp_admin2_df)
 }
 }
