@@ -1,5 +1,3 @@
-library(httr2)
-
 #' Fetch All Countries
 #'
 #' Retrieve all countries for which DTM data is publicly available through the API.

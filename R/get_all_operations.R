@@ -1,5 +1,3 @@
-library(httr2)
-
 #' Fetch All Operations
 #'
 #' Retrieve all operations for which DTM data is publicly available through the API.
