@@ -44,6 +44,6 @@ At least one of the following parameters must be provided: Operation, CountryNam
 }
 \examples{
 # Fetch IDP data at Admin Level 1
-idp_admin1_df <- get_idp_admin1_data(CountryName='Sudan', Admin1Name="Blue Nile")
+idp_admin1_df <- get_idp_admin1_data(CountryName = "Sudan", Admin1Name = "Blue Nile")
 head(idp_admin1_df)
 }

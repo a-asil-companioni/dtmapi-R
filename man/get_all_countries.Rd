@@ -13,7 +13,6 @@ A data frame containing the list of all countries.
 Retrieve all countries for which DTM data is publicly available through the API.
 }
 \examples{
-# Fetch all countries
 countries_df <- get_all_countries()
 head(countries_df)
 }
