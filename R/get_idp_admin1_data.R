@@ -18,7 +18,7 @@ library(httr2)
 #' @export
 #' @examples
 #' # Fetch IDP data at Admin Level 1
-#' idp_admin1_df <- get_idp_admin1_data(CountryName='Sudan', Admin1Name="Blue Nile")
+#' idp_admin1_df <- get_idp_admin1_data(CountryName = "Sudan", Admin1Name = "Blue Nile")
 #' head(idp_admin1_df)
 #' @importFrom httr2 request req_perform req_url_query resp_status resp_body_json
 
@@ -33,11 +33,9 @@ get_idp_admin1_data <- function(
     FromRoundNumber = 0,
     ToRoundNumber = 0
 ) {
-  # Retrieve the API URL
   api_url <- "https://dtmapi.iom.int/api/idpAdmin1Data/GetAdmin1Datav2"
 
-  # Set up query parameters
-  params <- list(
+  query_params <- list(
     Operation = Operation,
     CountryName = CountryName,
     Admin0Pcode = Admin0Pcode,
@@ -50,12 +48,10 @@ get_idp_admin1_data <- function(
   )
 
   tryCatch({
-    # Send GET request to the API with parameters using httr2
     response <- request(api_url) |>
-      req_url_query(!!!params) |>
+      req_url_query(!!!query_params) |>
       req_perform()
 
-    # Check if the request was successful
     if (resp_status(response) != 200) {
       stop("Failed to fetch data. Status code: ", resp_status(response))
     }
@@ -63,9 +59,7 @@ get_idp_admin1_data <- function(
     # Retrieve content as parsed JSON: simplifyVector helps to later return a dataframe.
     json_data <- resp_body_json(response, simplifyVector = TRUE)
 
-    # Check if the request was successful and extract the result
     if (json_data$isSuccess) {
-      # Return the result as a data frame
       return(as.data.frame(json_data$result))
     } else {
       # Handle API-specific errors

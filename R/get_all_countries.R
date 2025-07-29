@@ -7,7 +7,6 @@ library(httr2)
 #' @return A data frame containing the list of all countries.
 #' @export
 #' @examples
-#' # Fetch all countries
 #' countries_df <- get_all_countries()
 #' head(countries_df)
 #' @importFrom httr2 request req_perform resp_status resp_body_json
@@ -15,10 +14,8 @@ library(httr2)
 get_all_countries <- function() {
 
   tryCatch({
-    # Retrieve the API URL
     api_url <- "https://dtmapi.iom.int/api/Common/GetAllCountryList"
 
-    # Send GET request to the API using httr2
     response <- request(api_url) |> req_perform()
 
     # Check if the request was successful
@@ -26,11 +23,9 @@ get_all_countries <- function() {
       stop("Failed to fetch data. Status code: ", resp_status(response))
     }
 
-    # Parse the JSON content and extract the result as a data frame
     json_data <- resp_body_json(response, simplifyVector = TRUE)
     df <- as.data.frame(json_data$result) # as.data.frame() for consistency's sake.
 
-    # Return the data frame
     return(df)
 
   }, error = function(e) {
