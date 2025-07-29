@@ -1,5 +1,3 @@
-library(httr2)
-
 #' Fetch IDP Admin1 Data
 #'
 #' Retrieve IDP data at Admin 1 level based on specified parameters.
@@ -17,9 +15,11 @@ library(httr2)
 #' @return A data frame containing the IDP Admin1 data matching the specified criteria.
 #' @export
 #' @examples
+#' \dontrun{
 #' # Fetch IDP data at Admin Level 1
 #' idp_admin1_df <- get_idp_admin1_data(CountryName = "Sudan", Admin1Name = "Blue Nile")
 #' head(idp_admin1_df)
+#' }
 #' @importFrom httr2 request req_perform req_url_query resp_status resp_body_json
 
 get_idp_admin1_data <- function(
