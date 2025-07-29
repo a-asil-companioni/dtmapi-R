@@ -11,10 +11,12 @@
 #' @return A string representing a given subscription key for the DTM API.
 #' @export
 #' @examples
+#' \dontrun{
 #' # Generally, calling set_subscription_key() without the key as an argument is best, 
 #' # as the user can then be prompted to input the key without typing it directly
 #' # into the console, making it more secure and less likely to exposed.
 #' set_subscription_key()
+#' }
 #' @importFrom httr2 secret_decrypt
 #' @importFrom testthat is_testing
 get_subscription_key <- function() {

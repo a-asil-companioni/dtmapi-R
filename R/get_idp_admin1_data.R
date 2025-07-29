@@ -1,5 +1,3 @@
-library(httr2)
-
 #' Fetch IDP Admin1 Data
 #'
 #' Retrieve IDP data at Admin 1 level based on specified parameters.
