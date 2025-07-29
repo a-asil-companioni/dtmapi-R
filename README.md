@@ -1,9 +1,13 @@
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/a-asil-companioni/dtmapi-R/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/a-asil-companioni/dtmapi-R/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/a-asil-companioni/dtmapi-R/graph/badge.svg)](https://app.codecov.io/gh/a-asil-companioni/dtmapi-R)
+<!-- badges: end -->
+
 <br>
 
 <p align="center">
   <img alt="DTM Logo" src="https://dtm.iom.int/themes/custom/dtm_global/logo.svg" width="400">
 </p>
-
 -----------------
 
 ## About
