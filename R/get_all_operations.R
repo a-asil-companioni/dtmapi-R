@@ -1,7 +1,3 @@
-library(httr2)
-library(jsonlite)
-library(magrittr)  # For the `%>%` operator
-
 #' Fetch All Operations
 #'
 #' Retrieve all operations for which DTM data is publicly available through the API.
@@ -12,17 +8,20 @@ library(magrittr)  # For the `%>%` operator
 #' # Fetch all operations
 #' operations_df <- get_all_operations()
 #' head(operations_df)
-#' @importFrom httr2 request req_perform resp_status resp_body_string
-#' @importFrom magrittr %>%
-#' @importFrom jsonlite fromJSON
+#' @importFrom httr2 request req_perform resp_status resp_body_json
+
 get_all_operations <- function() {
 
   tryCatch({
-    # Load configuration
-    api_url <- "https://dtmapi.iom.int/api/Common/GetAllOperationList"
+    api_url <- "https://dtm-apim.iom.int/v3/OperationList"
 
-    # Send GET request to the API using httr2
-    response <- request(api_url) %>% req_perform()
+
+    response <- 
+      request(api_url) |>
+      req_headers_redacted("Cache-Control" = "no-cache",
+                           "Ocp-Apim-Subscription-Key" = get_subscription_key()
+                          ) |>
+      req_perform()
 
     # Check if the request was successful
     if (resp_status(response) != 200) {
@@ -30,8 +29,8 @@ get_all_operations <- function() {
     }
 
     # Parse the JSON content and extract the result as a data frame
-    data <- resp_body_string(response)
-    df <- fromJSON(data, flatten = TRUE)$result
+    json_data <- resp_body_json(response, simplifyVector = TRUE)
+    df <- as.data.frame(json_data$result) # as.data.frame() for consistency's sake.
 
     # Return the data frame
     return(df)
