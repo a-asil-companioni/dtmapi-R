@@ -7,14 +7,19 @@
 #' @examples
 #' countries_df <- get_all_countries()
 #' head(countries_df)
-#' @importFrom httr2 request req_perform resp_status resp_body_json
+#' @importFrom httr2 request req_perform resp_status resp_body_json req_headers_redacted
 
 get_all_countries <- function() {
 
   tryCatch({
-    api_url <- "https://dtmapi.iom.int/api/Common/GetAllCountryList"
+    api_url <- "https://dtm-apim.iom.int/v3/CountryList"
 
-    response <- request(api_url) |> req_perform()
+    response <- 
+      request(api_url) |>
+      req_headers_redacted("Cache-Control" = "no-cache",
+                           "Ocp-Apim-Subscription-Key" = get_subscription_key()
+                          ) |>
+      req_perform()
 
     # Check if the request was successful
     if (resp_status(response) != 200) {

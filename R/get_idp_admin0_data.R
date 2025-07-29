@@ -1,5 +1,3 @@
-library(httr2)
-
 #' Fetch IDP Admin0 Data
 #'
 #' Retrieve IDP data at Admin 0 level based on specified parameters.
@@ -15,12 +13,14 @@ library(httr2)
 #' @return A data frame containing the IDP Admin0 data matching the specified criteria.
 #' @export
 #' @examples
+#' \dontrun{
 #' # Fetch IDP data at Admin Level 0
 #' idp_admin0_df <- get_idp_admin0_data(CountryName = "Ethiopia",
 #'                                      FromRoundNumber = 1, 
 #'                                      ToRoundNumber = 10)
 #' head(idp_admin0_df)
-#' @importFrom httr2 request req_perform req_url_query resp_status resp_body_json
+#' }
+#' @importFrom httr2 request req_perform req_url_query resp_status resp_body_json req_headers_redacted
 
 get_idp_admin0_data <- function(
     Operation = NULL,
@@ -31,7 +31,7 @@ get_idp_admin0_data <- function(
     FromRoundNumber = 0,
     ToRoundNumber = 0
 ) {
-  api_url <- "https://dtmapi.iom.int/api/idpAdmin0Data/GetAdmin0Datav2"
+  api_url <- "https://dtm-apim.iom.int/v3/IdpAdmin0Data"
 
   query_params <- list(
     Operation = Operation,
@@ -46,6 +46,9 @@ get_idp_admin0_data <- function(
   tryCatch({
     response <- 
       request(api_url) |>
+      req_headers_redacted("Cache-Control" = "no-cache",
+                           "Ocp-Apim-Subscription-Key" = get_subscription_key()
+                          ) |>
       req_url_query(!!!query_params) |>
       req_perform()
 
