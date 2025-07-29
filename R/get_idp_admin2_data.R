@@ -22,7 +22,7 @@
 #' idp_admin2_df <- get_idp_admin2_data(Operation = "Yemen conflict", CountryName = "Yemen")
 #' head(idp_admin2_df)
 #' }
-#' @importFrom httr2 request req_perform req_url_query resp_status resp_body_string
+#' @importFrom httr2 request req_perform req_url_query resp_status resp_body_string req_headers_redacted
 
 get_idp_admin2_data <- function(
     Operation = NULL,
@@ -37,7 +37,7 @@ get_idp_admin2_data <- function(
     FromRoundNumber = 0,
     ToRoundNumber = 0
 ) {
-  api_url <- "https://dtmapi.iom.int/api/idpAdmin2Data/GetAdmin2Datav2"
+  api_url <- "https://dtm-apim.iom.int/v3/IdpAdmin2Data"
 
   query_params <- list(
     Operation = Operation,
@@ -54,7 +54,11 @@ get_idp_admin2_data <- function(
   )
 
   tryCatch({
-    response <- request(api_url) |>
+    response <- 
+      request(api_url) |>
+      req_headers_redacted("Cache-Control" = "no-cache",
+                           "Ocp-Apim-Subscription-Key" = get_subscription_key()
+                          ) |>
       req_url_query(!!!query_params) |>
       req_perform()
 

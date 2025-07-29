@@ -17,10 +17,12 @@ library(httr2)
 #' @return A data frame containing the IDP Admin1 data matching the specified criteria.
 #' @export
 #' @examples
+#' \dontrun{
 #' # Fetch IDP data at Admin Level 1
 #' idp_admin1_df <- get_idp_admin1_data(CountryName = "Sudan", Admin1Name = "Blue Nile")
 #' head(idp_admin1_df)
-#' @importFrom httr2 request req_perform req_url_query resp_status resp_body_json
+#' }
+#' @importFrom httr2 request req_perform req_url_query resp_status resp_body_json req_headers_redacted
 
 get_idp_admin1_data <- function(
     Operation = NULL,
@@ -33,7 +35,7 @@ get_idp_admin1_data <- function(
     FromRoundNumber = 0,
     ToRoundNumber = 0
 ) {
-  api_url <- "https://dtmapi.iom.int/api/idpAdmin1Data/GetAdmin1Datav2"
+  api_url <- "https://dtm-apim.iom.int/v3/IdpAdmin1Data"
 
   query_params <- list(
     Operation = Operation,
@@ -48,7 +50,11 @@ get_idp_admin1_data <- function(
   )
 
   tryCatch({
-    response <- request(api_url) |>
+    response <- 
+      request(api_url) |>
+      req_headers_redacted("Cache-Control" = "no-cache",
+                           "Ocp-Apim-Subscription-Key" = get_subscription_key()
+                          ) |>
       req_url_query(!!!query_params) |>
       req_perform()
 
