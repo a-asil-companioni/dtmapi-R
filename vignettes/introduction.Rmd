@@ -12,7 +12,6 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-library(httr2)
 ```
 
 ## Introduction
@@ -29,26 +28,54 @@ The `dtmapi` package provides functions to interact with the Displacement Trac
 
 -   `get_idp_admin2_data()`
 
-
 ## Install Package
 
-The `dtmapi` package is available on CRAN and can be installed using the following command: :
-```{r install , eval = FALSE}
+The `dtmapi` package is available on CRAN and can be installed using the following command:
+```{r install, eval = FALSE}
 install.packages("dtmapi")
 ```
 
 ## Load Package
 
 After installation, load the package using library():
-```{r setup}
+```{r setup, eval = FALSE}
 library(dtmapi)
+```
+
+## Setting the Subscription Key
+After creating a subscription key on https://dtm-apim-portal.iom.int, that key
+needs to be given to R. There are two main ways to do this.
+
+1. By calling `set_subscription_key()` and then typing in the key.
+
+The user will be prompted to input the key into a pop-up field.
+```{r set_subscription_key_demo, eval = FALSE}
+set_subscription_key()
+```
+
+2. By setting up the environment variable directly.
+
+If one would like to avoid re-inputting the subscription key for each R session,
+an alternative approach is to create the environment variable 
+`DTM_SUBSCRIPTION_KEY`, with the subscription key as its value. Ideally, this
+should be (a) done in a *.Renviron* file, and (b) through the use of *R projects*
+or other means of organising files (e.g. if one is using VS Code: *workspaces*).
+
+One quick way to get started is by calling the following line of code, if one is
+using an R project or equivalent:
+```{r r_environ_demo_project, eval = FALSE}
+usethis::edit_r_environ("project")
+```
+Or, if one is not using an R project or equivalent:
+```{r r_environ_demo_user, eval = FALSE}
+usethis::edit_r_environ("user")
 ```
 
 ## Get All Countries
 
 The `get_all_countries()` function retrieves a list of all countries from the DTM API.
 
-```{r get_country}
+```{r get_country, eval = FALSE}
 # Fetch all countries
 countries_df <- get_all_countries()
 
@@ -60,7 +87,7 @@ head(countries_df)
 
 The `get_all_operations()` function retrieves a list of all operations from the DTM API.
 
-```{r get_operations}
+```{r get_operations, eval = FALSE}
 # Fetch all operations
 operations_df <- get_all_operations()
 
@@ -72,7 +99,7 @@ head(operations_df)
 
 The `get_idp_admin0_data()` function retrieves Internally Displaced Persons (IDP) data aggregated at the country level.
 
-```{r get_idp_admin0}
+```{r get_idp_admin0, eval = FALSE}
 # Fetch IDP data at Admin Level 0
 idp_admin0_df <- get_idp_admin0_data(CountryName='Ethiopia', FromRoundNumber=1, ToRoundNumber=10)
 
@@ -84,7 +111,7 @@ head(idp_admin0_df)
 
 The get_idp_admin1_data() function retrieves IDP data aggregated at Admin Level 1.
 
-```{r get_idp_admin1}
+```{r get_idp_admin1, eval = FALSE}
 # Fetch IDP data at Admin Level 1
 idp_admin1_df <- get_idp_admin1_data(CountryName='Sudan', Admin1Name="Blue Nile", FromReportingDate='2020-01-01', ToReportingDate='2024-08-15')
 
@@ -95,7 +122,7 @@ head(idp_admin1_df)
 ## Get IDP Data at Admin Level 2
 
 The get_idp_admin2_data() function retrieves IDP data aggregated at Admin Level 2
-```{r get_idp_admin2}
+```{r get_idp_admin2, eval = FALSE}
 # Fetch IDP data at Admin Level 2
 idp_admin2_df <- get_idp_admin2_data(Operation="Displacement due to conflict", CountryName='Lebanon')
 
