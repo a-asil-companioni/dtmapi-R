@@ -150,7 +150,10 @@ all operations from the DTM API.</p>
 Displaced Persons (IDP) data aggregated at the country level.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Fetch IDP data at Admin Level 0</span></span>
-<span><span class="va">idp_admin0_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_idp_admin0_data.html">get_idp_admin0_data</a></span><span class="op">(</span>CountryName<span class="op">=</span><span class="st">'Ethiopia'</span>, FromRoundNumber<span class="op">=</span><span class="fl">1</span>, ToRoundNumber<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">idp_admin0_df</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="../reference/get_idp_admin0_data.html">get_idp_admin0_data</a></span><span class="op">(</span>CountryName <span class="op">=</span> <span class="st">"Ethiopia"</span>,</span>
+<span>                      FromRoundNumber <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>                      ToRoundNumber <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Display the first few rows of the data frame</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">idp_admin0_df</span><span class="op">)</span></span></code></pre></div>
@@ -162,7 +165,11 @@ Displaced Persons (IDP) data aggregated at the country level.</p>
 Admin Level 1.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Fetch IDP data at Admin Level 1</span></span>
-<span><span class="va">idp_admin1_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_idp_admin1_data.html">get_idp_admin1_data</a></span><span class="op">(</span>CountryName<span class="op">=</span><span class="st">'Sudan'</span>, Admin1Name<span class="op">=</span><span class="st">"Blue Nile"</span>, FromReportingDate<span class="op">=</span><span class="st">'2020-01-01'</span>, ToReportingDate<span class="op">=</span><span class="st">'2024-08-15'</span><span class="op">)</span></span>
+<span><span class="va">idp_admin1_df</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="../reference/get_idp_admin1_data.html">get_idp_admin1_data</a></span><span class="op">(</span>CountryName <span class="op">=</span> <span class="st">"Sudan"</span>,</span>
+<span>                      Admin1Name <span class="op">=</span> <span class="st">"Blue Nile"</span>,</span>
+<span>                      FromReportingDate <span class="op">=</span> <span class="st">"2020-01-01"</span>,</span>
+<span>                      ToReportingDate <span class="op">=</span> <span class="st">"2024-08-15"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Display the first few rows of the data frame</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">idp_admin1_df</span><span class="op">)</span></span></code></pre></div>
@@ -174,7 +181,9 @@ Admin Level 1.</p>
 Admin Level 2</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Fetch IDP data at Admin Level 2</span></span>
-<span><span class="va">idp_admin2_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_idp_admin2_data.html">get_idp_admin2_data</a></span><span class="op">(</span>Operation<span class="op">=</span><span class="st">"Displacement due to conflict"</span>, CountryName<span class="op">=</span><span class="st">'Lebanon'</span><span class="op">)</span></span>
+<span><span class="va">idp_admin2_df</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="../reference/get_idp_admin2_data.html">get_idp_admin2_data</a></span><span class="op">(</span>Operation <span class="op">=</span> <span class="st">"Displacement due to conflict"</span>,</span>
+<span>                      CountryName <span class="op">=</span> <span class="st">"Lebanon"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Display the first few rows of the data frame</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">idp_admin2_df</span><span class="op">)</span></span></code></pre></div>
