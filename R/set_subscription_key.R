@@ -1,6 +1,6 @@
 #' Set the user's API subscription key in order to make the API calls.
 #'
-#' The API will be stored as an environmental variable named "DTM_API_KEY".
+#' The API will be stored as an environmental variable named "DTM_SUBSCRIPTION_KEY".
 #' @param key 
 #' Either NULL or a string representing the key. NULL is preferable: using it 
 #' will prompt the user to type the subscription key in a graphical user 

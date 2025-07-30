@@ -17,4 +17,3 @@ Retrieve all countries for which DTM data is publicly available through the API.
 countries_df <- get_all_countries()
 head(countries_df)
 }
-}
