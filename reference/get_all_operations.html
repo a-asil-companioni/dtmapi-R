@@ -49,11 +49,11 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span><span class="co"># Fetch all operations</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Fetch all operations</span></span></span>
 <span class="r-in"><span><span class="va">operations_df</span> <span class="op">&lt;-</span> <span class="fu">get_all_operations</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in value[[3L]](cond):</span> API request failed: No API key found, please supply with set_subscription_key() or otherwise specifying the DTM_SUBSCRIPTION_KEY environment variable.</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">operations_df</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'operations_df' not found</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
@@ -61,7 +61,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Luong Bang Tran.</p>
+  <p>Developed by Luong Bang Tran, Assad Asil Companioni.</p>
 </div>
 
 <div class="pkgdown-footer-right">
