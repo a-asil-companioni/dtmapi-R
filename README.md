@@ -18,37 +18,8 @@ The `dtmapi` package is available on [CRAN](https://CRAN.R-project.org/package=d
 install.packages("dtmapi")
 ```
 
-## Load Package
-After installation, load the package using library():
-```sh
-library(dtmapi)
-```
-
-## Usage
-Here's a quick example to get you started:
-```R
-# Get all countries for which DTM data is publicly available through the API.
-countries_df <- get_all_countries()
-head(countries_df)
-
-# Get all operations for which DTM data is publicly available through the API.
-operations_df <- get_all_operations()
-head(operations_df)
-
-# Get IDP Admin 0 Data for Ethiopia from Round 1 to Round 10
-idp_admin0_df <- get_idp_admin0_data(CountryName='Ethiopia', FromRoundNumber=1, ToRoundNumber=10)
-head(idp_admin0_df)
-
-# Get IDP Admin 1 Data for Sudan from reporting date 2020-01-01 to 2024-08-15
-idp_admin1_df <- get_idp_admin1_data(CountryName='Sudan', Admin1Name="Blue Nile", FromReportingDate='2020-01-01', ToReportingDate='2024-08-15')
-head(idp_admin1_df)
-
-# Get IDP Admin 2 Data for Lebanon
-idp_admin2_df <- get_idp_admin2_data(Operation="Displacement due to conflict", CountryName='Lebanon')
-head(idp_admin2_df)
-```
-## Documentation
-Comprehensive documentation is available at [github.io](https://displacement-tracking-matrix.github.io/dtmapi-R/).
+## User Guide
+A user guide to getting started with `dtmapi` is available [here](https://displacement-tracking-matrix.github.io/dtmapi-R/).
 
 ## Source Code
 The source code for `dtmapi` is available on [GitHub](https://github.com/Displacement-tracking-Matrix/dtmapi-R).
