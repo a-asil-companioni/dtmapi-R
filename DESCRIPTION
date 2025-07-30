@@ -17,5 +17,6 @@ Imports:
     askpass
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    withr
 VignetteBuilder: knitr
